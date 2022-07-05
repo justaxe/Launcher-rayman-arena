@@ -1,0 +1,776 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props" Condition="Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props')" />
+  <Import Project="..\packages\Microsoft.UI.Xaml.2.7.0\build\Microsoft.UI.Xaml.props" Condition="Exists('..\packages\Microsoft.UI.Xaml.2.7.0\build\Microsoft.UI.Xaml.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC329C0D-A9D8-40C9-885C-2E65E790A801}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>luncher_rayman_aréna</RootNamespace>
+    <AssemblyName>Rayman Arena Definitive Edition Online Beta 2.05</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>sbire_ico_nz.tgabeta.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>6AD14B837C23A858C8312941AA8E45EF61D9F4F3</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>luncher rayman aréna_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Costura, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Costura.Fody.5.7.0\lib\netstandard1.0\Costura.dll</HintPath>
+    </Reference>
+    <Reference Include="Diga.WebView2.Interop, Version=13.0.1.0, Culture=neutral, PublicKeyToken=b57a3a24e5935ad4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Diga.WebView2.Interop.13.0.1\lib\netstandard2.0\Diga.WebView2.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Diga.WebView2.WinForms, Version=13.0.1.0, Culture=neutral, PublicKeyToken=82b414213cc08e92, processorArchitecture=MSIL">
+      <HintPath>..\packages\Diga.WebView2.WinForms.13.0.1\lib\net472\Diga.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Diga.WebView2.Wrapper, Version=13.0.1.0, Culture=neutral, PublicKeyToken=0ba9f1d70febdaef, processorArchitecture=MSIL">
+      <HintPath>..\packages\Diga.WebView2.Wrapper.13.0.1\lib\netstandard2.0\Diga.WebView2.Wrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Memory, Version=1.2.24.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\Memory.dll.x86.1.2.24\lib\netstandard2.0\Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1020.30, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1020.30\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.1020.30, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1020.30\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.1020.30, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1020.30\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MimeTypeExtension, Version=1.0.28.1, Culture=neutral, PublicKeyToken=5bccdf24b37e4bab, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeTypeExtension.1.0.28\lib\netstandard2.0\MimeTypeExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Linq.Expressions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.0\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.4.3.0\lib\net463\System.Runtime.InteropServices.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="acceuil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="acceuil.Designer.cs">
+      <DependentUpon>acceuil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameModeBaseAttribute.cs" />
+    <Compile Include="Platform.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RayCarrot.Binary\Abstract\IBinarySerializable.cs" />
+    <Compile Include="RayCarrot.Binary\Binary\Reader.cs" />
+    <Compile Include="RayCarrot.Binary\Binary\Writer.cs" />
+    <Compile Include="RayCarrot.Binary\Checksum\IChecksumCalculator.cs" />
+    <Compile Include="RayCarrot.Binary\DataTypes\BinarySerializableException.cs" />
+    <Compile Include="RayCarrot.Binary\DataTypes\Endian.cs" />
+    <Compile Include="RayCarrot.Binary\DataTypes\SerializableObjectWrapper.cs" />
+    <Compile Include="RayCarrot.Binary\Extensions\BinarySerializerExtensions.cs" />
+    <Compile Include="RayCarrot.Binary\Helpers\BinaryHelpers.cs" />
+    <Compile Include="RayCarrot.Binary\Helpers\BinarySerializableHelpers.cs" />
+    <Compile Include="RayCarrot.Binary\Logging\BinarySerializerFileLogger.cs" />
+    <Compile Include="RayCarrot.Binary\Logging\IBinarySerializerLogger.cs" />
+    <Compile Include="RayCarrot.Binary\Serializer\BinaryDeserializer.cs" />
+    <Compile Include="RayCarrot.Binary\Serializer\BinarySerializer.cs" />
+    <Compile Include="RayCarrot.Binary\Serializer\IBinarySerializer.cs" />
+    <Compile Include="RayCarrot.Binary\Settings\BinarySerializerSettings.cs" />
+    <Compile Include="RayCarrot.Binary\Settings\IBinarySerializerSettings.cs" />
+    <Compile Include="raycarrot\ArchiveFileGenerator.cs" />
+    <Compile Include="raycarrot\BinarySerializerExtensions.cs" />
+    <Compile Include="raycarrot\CNT\OpenSpaceCntData.cs" />
+    <Compile Include="raycarrot\CNT\OpenSpaceCntFileEntry.cs" />
+    <Compile Include="raycarrot\IArchiveFileGenerator.cs" />
+    <Compile Include="raycarrot\Settings\OpenSpaceEngineVersion.cs" />
+    <Compile Include="raycarrot\Settings\OpenSpaceGame.cs" />
+    <Compile Include="raycarrot\Settings\OpenSpaceGameModeInfoAttribute.cs" />
+    <Compile Include="raycarrot\Settings\OpenSpaceSettings.cs" />
+    <EmbeddedResource Include="acceuil.resx">
+      <DependentUpon>acceuil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.manifest" />
+    <None Include="luncher rayman aréna_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RayCarrot.Binary\RayCarrot.Binary.csproj" />
+    <None Include="Resources\2_tmet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\L_muretto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sh_CAMINO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bonux.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cc_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pad_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pirates_plancher01txy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\la_sable2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pi2_mur1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foret_sol0_TXY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pi3_cage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pi3_cage1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pi2_maison.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tnt_caisse02_txy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anello_doccia01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mx_grille.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mx_slodown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mx_grillecheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mx_circuit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0b012e598d511d0cf0964ed73f528cd3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tex1_512x512_7ba73608fae95b17_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fond.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inter_cr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inter_cr_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inter_fa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inter_fa_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inter_la.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inter_la_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inter_pi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inter_pi_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fond2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icona_telecamera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icona_telecamera_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\L_muretto1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PngItem_36536261.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r51.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\fils\texture\RaymanT\2\demo\r2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\fils\texture\RaymanT\3\demo\r3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\fils\texture\RaymanT\4\demo\r4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\fils\texture\globox\1\demo\g1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\fils\texture\globox\2\demo\g2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rw3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rw2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rw1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ra4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ra3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ra2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ra1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\t5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rw4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ra5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\h3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\p2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\g6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fond2 - Copie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\discord.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Twitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youtube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YT01.png" />
+    <None Include="Resources\twwiter.jpg" />
+    <None Include="Resources\Insta01.png" />
+    <None Include="Resources\Redd01.png" />
+    <None Include="Resources\Disc01.png" />
+    <None Include="Resources\Web01.png" />
+    <None Include="Resources\UbiINI %281%29.png" />
+    <None Include="Resources\UpdateIco002.png" />
+    <None Include="Resources\RepairUnins.png" />
+    <None Include="Resources\RaySpinSquare.gif" />
+    <None Include="Resources\PurpleBorders001.png" />
+    <None Include="Resources\Untitled-1.png" />
+    <None Include="Resources\Button002.png" />
+    <None Include="Resources\Button003.png" />
+    <None Include="Resources\EditSkin01.png" />
+    <None Include="Resources\Button003SP.png" />
+    <None Include="Resources\Button003FR.png" />
+    <None Include="Resources\EditSkin01SP.png" />
+    <None Include="Resources\EditSkin01FR.png" />
+    <None Include="Resources\ResetSkins001FR.png" />
+    <None Include="Resources\ResetSkins001.png" />
+    <None Include="Resources\ResetSkins001ESP.png" />
+    <None Include="Resources\AddNewSkins.png" />
+    <None Include="Resources\RadminVPN.png" />
+    <None Include="Resources\Apply001.png" />
+    <None Include="Resources\ApplySP.png" />
+    <None Include="Resources\ApplyFR.png" />
+    <None Include="Resources\AddNewSkinsFR.png" />
+    <None Include="Resources\AddNewSkinsSP.png" />
+    <None Include="Resources\rayonli.png" />
+    <None Include="Resources\raymanarenaonline.png" />
+    <None Include="Resources\huch10000.jpg" />
+    <None Include="Resources\huch10001.jpg" />
+    <None Include="Resources\huch10002.jpg" />
+    <None Include="Resources\huch10003.jpg" />
+    <None Include="Resources\hourglass.png" />
+    <None Include="Resources\AddNewSkinsRUS.png" />
+    <None Include="Resources\Apply001RUS.png" />
+    <None Include="Resources\EditSkinRus.png" />
+    <None Include="Resources\LaunchButtonRus.png" />
+    <None Include="Resources\ResetSkins001RUS.png" />
+    <Content Include="sbire_ico_nz.tgabeta.ico" />
+    <Content Include="sbire_ico_X2.ico" />
+    <None Include="Resources\op1.bmp" />
+    <None Include="Resources\op1.jpg" />
+    <None Include="Resources\op2.jpg" />
+    <None Include="Resources\op3.jpg" />
+    <None Include="Resources\globox1.jpg" />
+    <None Include="Resources\globox2.jpg" />
+    <None Include="Resources\globox3.jpg" />
+    <None Include="Resources\oh1.jpg" />
+    <None Include="Resources\oh2.jpg" />
+    <None Include="Resources\oh3.jpg" />
+    <None Include="Resources\RayArenaDefOnline113logo.png" />
+    <None Include="Resources\07d0dfb60b2b2c8347f7cdfce3f16592.jpg" />
+    <None Include="bin\Debug\fils\texture\globox\6\globox.png" />
+    <None Include="bin\Debug\fils\texture\globox\6\demo\g6.jpg" />
+    <None Include="bin\Debug\fils\texture\Hunchman\3\demo\h3.jpg" />
+    <None Include="Resources\kisspng-cut-copy-and-paste-copying-document-information-5ae7aecb3d0b10.1051847815251330032501.png" />
+    <None Include="Resources\kisspng-cut-copy-and-paste-copying-document-information-5ae7aecb3d0b10.10518478152513300325011.png" />
+    <None Include="Resources\fleche.jpg" />
+    <None Include="Resources\bulleRepairrayman.jpg" />
+    <None Include="Resources\bulleupdaterayman.jpg" />
+    <None Include="Resources\DGVOODOICON.png" />
+    <None Include="Resources\DX8SetupIcon.png" />
+    <None Include="Resources\rcp.png" />
+    <None Include="Resources\Sans titre 7.jpg" />
+    <Content Include="R_Arena.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Diga.WebView2.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Diga.WebView2.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Diga.WebView2.Wrapper">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Web.WebView2.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Web.WebView2.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Web.WebView2.Wpf">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="MimeTypeExtension">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="runtimes\win-arm64\native\WebView2Loader.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="runtimes\win-x64\native\WebView2Loader.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="runtimes\win-x86\native\WebView2Loader.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="R_Arena.ico">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RayCarrot.Binary\bin\Debug\netstandard2.0\" />
+    <Folder Include="RayCarrot.Binary\bin\Release\netstandard2.0\" />
+    <Folder Include="RayCarrot.Binary\obj\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1020.30\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1020.30\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.1020.30\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.1020.30\build\Microsoft.Web.WebView2.targets'))" />
+    <Error Condition="!Exists('..\packages\Diga.WebView2.Wrapper.13.0.1\build\Diga.WebView2.Wrapper.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Diga.WebView2.Wrapper.13.0.1\build\Diga.WebView2.Wrapper.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.UI.Xaml.2.7.0\build\Microsoft.UI.Xaml.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.UI.Xaml.2.7.0\build\Microsoft.UI.Xaml.props'))" />
+    <Error Condition="!Exists('..\packages\Fody.6.5.5\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.5.5\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.7.0\build\Costura.Fody.props'))" />
+    <Error Condition="!Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets'))" />
+  </Target>
+  <Import Project="..\packages\Diga.WebView2.Wrapper.13.0.1\build\Diga.WebView2.Wrapper.targets" Condition="Exists('..\packages\Diga.WebView2.Wrapper.13.0.1\build\Diga.WebView2.Wrapper.targets')" />
+  <Import Project="..\packages\Fody.6.5.5\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.5\build\Fody.targets')" />
+  <Import Project="..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.5.7.0\build\Costura.Fody.targets')" />
+</Project>
